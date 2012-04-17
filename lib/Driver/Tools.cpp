@@ -791,6 +791,9 @@ void Clang::ConstructJob(Compilation &C, const JobAction &JA,
     } else if (JA.getType() == types::TY_RewrittenObjC) {
       CmdArgs.push_back("-rewrite-objc");
       IsRewriter = true;
+    } else if (JA.getType() == types::TY_RewrittenObjCToD) {
+        CmdArgs.push_back("-rewrite-objc-to-d");
+        IsRewriter = true;
     } else {
       assert(JA.getType() == types::TY_PP_Asm &&
              "Unexpected output type!");

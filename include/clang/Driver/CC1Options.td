@@ -357,6 +357,8 @@ def rewrite_test : Flag<"-rewrite-test">,
   HelpText<"Rewriter playground">;
 def rewrite_objc : Flag<"-rewrite-objc">,
   HelpText<"Rewrite ObjC into C (code rewriter example)">;
+def rewrite_objc_to_d : Flag<"-rewrite-objc-to-d">,
+  HelpText<"Rewrite ObjC into D (code rewriter example)">;
 def rewrite_macros : Flag<"-rewrite-macros">,
   HelpText<"Expand macros without full preprocessing">;
 

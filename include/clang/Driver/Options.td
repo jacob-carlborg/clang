@@ -555,6 +555,8 @@ def pthread : Flag<"-pthread">;
 def p : Flag<"-p">;
 def read__only__relocs : Separate<"-read_only_relocs">;
 def remap : Flag<"-remap">;
+def rewrite_objc_to_d : Flag<"-rewrite-objc-to-d">, Flags<[DriverOption]>,
+  HelpText<"Rewrite Objective-C source to D">;
 def rewrite_objc : Flag<"-rewrite-objc">, Flags<[DriverOption]>,
   HelpText<"Rewrite Objective-C source to C++">;
 def rpath : Separate<"-rpath">, Flags<[LinkerInput]>;

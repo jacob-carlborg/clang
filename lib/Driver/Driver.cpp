@@ -781,6 +781,7 @@ void Driver::BuildActions(const ToolChain &TC, const ArgList &Args,
     // -{fsyntax-only,-analyze,emit-ast,S} only run up to the compiler.
   } else if ((FinalPhaseArg = Args.getLastArg(options::OPT_fsyntax_only)) ||
              (FinalPhaseArg = Args.getLastArg(options::OPT_rewrite_objc)) ||
+             (FinalPhaseArg = Args.getLastArg(options::OPT_rewrite_objc_to_d)) ||
              (FinalPhaseArg = Args.getLastArg(options::OPT__analyze,
                                               options::OPT__analyze_auto)) ||
              (FinalPhaseArg = Args.getLastArg(options::OPT_emit_ast)) ||
@@ -903,6 +904,8 @@ Action *Driver::ConstructPhaseAction(const ArgList &Args, phases::ID Phase,
       return new CompileJobAction(Input, types::TY_Nothing);
     } else if (Args.hasArg(options::OPT_rewrite_objc)) {
       return new CompileJobAction(Input, types::TY_RewrittenObjC);
+    } else if (Args.hasArg(options::OPT_rewrite_objc_to_d)) {
+      return new CompileJobAction(Input, types::TY_RewrittenObjCToD);
     } else if (Args.hasArg(options::OPT__analyze, options::OPT__analyze_auto)) {
       return new AnalyzeJobAction(Input, types::TY_Plist);
     } else if (Args.hasArg(options::OPT_emit_ast)) {

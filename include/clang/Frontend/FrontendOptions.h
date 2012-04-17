@@ -47,6 +47,7 @@ namespace frontend {
     PrintPreprocessedInput, ///< -E mode.
     RewriteMacros,          ///< Expand macros but not #includes.
     RewriteObjC,            ///< ObjC->C Rewriter.
+    RewriteObjCToD,            ///< ObjC->D Rewriter.
     RewriteTest,            ///< Rewriter playground
     RunAnalysis,            ///< Run one or more source code analyses.
     RunPreprocessorOnly     ///< Just lex, no output.

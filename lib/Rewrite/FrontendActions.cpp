@@ -98,6 +98,15 @@ ASTConsumer *RewriteObjCAction::CreateASTConsumer(CompilerInstance &CI,
   return 0;
 }
 
+ASTConsumer *RewriteObjCToDAction::CreateASTConsumer(CompilerInstance &CI,
+                                                  llvm::StringRef InFile) {
+  if (llvm::raw_ostream *OS = CI.createDefaultOutputFile(false, InFile, "cpp"))
+    return CreateObjCToDRewriter(InFile, OS,
+                              CI.getDiagnostics(), CI.getLangOpts(),
+                              CI.getDiagnosticOpts().NoRewriteMacros);
+  return 0;
+}
+
 void RewriteMacrosAction::ExecuteAction() {
   CompilerInstance &CI = getCompilerInstance();
   llvm::raw_ostream *OS = CI.createDefaultOutputFile(true, getCurrentFile());

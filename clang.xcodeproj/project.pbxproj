@@ -144,6 +144,8 @@
 		57F66613121B4DE600DCE3B7 /* ASTWriterDecl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57F66610121B4DE600DCE3B7 /* ASTWriterDecl.cpp */; };
 		57F66614121B4DE600DCE3B7 /* ASTWriterStmt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57F66611121B4DE600DCE3B7 /* ASTWriterStmt.cpp */; };
 		72D16C1F0D9975C400E6DA4A /* HTMLRewrite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72D16C1E0D9975C400E6DA4A /* HTMLRewrite.cpp */; };
+		7A9F463A12AAACC8009B3E6C /* RewriteObjCToD-b.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F463812AAACC8009B3E6C /* RewriteObjCToD-b.cpp */; };
+		7A9F463B12AAACC8009B3E6C /* RewriteObjCToD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F463912AAACC8009B3E6C /* RewriteObjCToD.cpp */; };
 		84AF36A10CB17A3B00C820A5 /* DeclObjC.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AF36A00CB17A3B00C820A5 /* DeclObjC.h */; };
 		9012911D1048068D0083456D /* ASTUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9012911C1048068D0083456D /* ASTUnit.cpp */; };
 		90129121104812F90083456D /* CIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9012911F104812F90083456D /* CIndex.cpp */; };
@@ -606,6 +608,8 @@
 		57F66610121B4DE600DCE3B7 /* ASTWriterDecl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ASTWriterDecl.cpp; sourceTree = "<group>"; };
 		57F66611121B4DE600DCE3B7 /* ASTWriterStmt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ASTWriterStmt.cpp; sourceTree = "<group>"; };
 		72D16C1E0D9975C400E6DA4A /* HTMLRewrite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HTMLRewrite.cpp; path = lib/Rewrite/HTMLRewrite.cpp; sourceTree = "<group>"; };
+		7A9F463812AAACC8009B3E6C /* RewriteObjCToD-b.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "RewriteObjCToD-b.cpp"; sourceTree = "<group>"; };
+		7A9F463912AAACC8009B3E6C /* RewriteObjCToD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RewriteObjCToD.cpp; sourceTree = "<group>"; };
 		84AF36A00CB17A3B00C820A5 /* DeclObjC.h */ = {isa = PBXFileReference; fileEncoding = 30; indentWidth = 2; lastKnownFileType = sourcecode.c.h; name = DeclObjC.h; path = clang/AST/DeclObjC.h; sourceTree = "<group>"; tabWidth = 2; };
 		8DD76F6C0486A84900D96B5E /* clang */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = clang; sourceTree = BUILT_PRODUCTS_DIR; };
 		9012911510470FCE0083456D /* Index.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Index.h; path = "clang-c/Index.h"; sourceTree = "<group>"; };
@@ -1342,6 +1346,8 @@
 		BFE2F67911DA95590007EDC0 /* Rewrite */ = {
 			isa = PBXGroup;
 			children = (
+				7A9F463812AAACC8009B3E6C /* RewriteObjCToD-b.cpp */,
+				7A9F463912AAACC8009B3E6C /* RewriteObjCToD.cpp */,
 				BFE2F67A11DA95590007EDC0 /* CMakeLists.txt */,
 				BFE2F67B11DA95590007EDC0 /* Debug */,
 				BFE2F69311DA955A0007EDC0 /* DeltaTree.cpp */,
@@ -2039,6 +2045,7 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "clang" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -2336,6 +2343,8 @@
 				BF9FEE381225E925003A8B71 /* BoostConAction.cpp in Sources */,
 				BF9FEE521226FE9F003A8B71 /* ParseAST.cpp in Sources */,
 				BF9FEEF2122D8068003A8B71 /* PreprocessingRecord.cpp in Sources */,
+				7A9F463A12AAACC8009B3E6C /* RewriteObjCToD-b.cpp in Sources */,
+				7A9F463B12AAACC8009B3E6C /* RewriteObjCToD.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2430,7 +2439,7 @@
 		1DEB923608733DC60010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_VERSION = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
@@ -2446,6 +2455,7 @@
 		1DEB923708733DC60010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (

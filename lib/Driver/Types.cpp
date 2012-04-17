@@ -100,6 +100,7 @@ bool types::isOnlyAcceptedByClang(ID Id) {
   case TY_LLVM_IR:
   case TY_LLVM_BC:
   case TY_RewrittenObjC:
+  case TY_RewrittenObjCToD:
     return true;
   }
 }

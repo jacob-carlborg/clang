@@ -33,6 +33,14 @@ ASTConsumer *CreateObjCRewriter(const std::string &InFile,
                                 Diagnostic &Diags,
                                 const LangOptions &LOpts,
                                 bool SilenceRewriteMacroWarning);
+                                
+// ObjCToD rewriter: attempts tp rewrite ObjC constructs into pure D code.
+// This is considered experimental, and only works with Apple's ObjC runtime.
+ASTConsumer *CreateObjCToDRewriter(const std::string &InFile,
+                                llvm::raw_ostream *OS,
+                                Diagnostic &Diags,
+                                const LangOptions &LOpts,
+                                bool SilenceRewriteMacroWarning);
 
 /// CreateHTMLPrinter - Create an AST consumer which rewrites source code to
 /// HTML with syntax highlighting suitable for viewing in a web-browser.

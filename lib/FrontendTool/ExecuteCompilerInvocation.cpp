@@ -78,6 +78,7 @@ static FrontendAction *CreateFrontendBaseAction(CompilerInstance &CI) {
   case PrintPreprocessedInput: return new PrintPreprocessedAction();
   case RewriteMacros:          return new RewriteMacrosAction();
   case RewriteObjC:            return new RewriteObjCAction();
+  case RewriteObjCToD:         return new RewriteObjCToDAction();
   case RewriteTest:            return new RewriteTestAction();
   case RunAnalysis:            return new AnalysisAction();
   case RunPreprocessorOnly:    return new PreprocessOnlyAction();

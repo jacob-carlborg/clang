@@ -10,6 +10,7 @@ add_clang_library(clangRewrite
   HTMLRewrite.cpp
   RewriteMacros.cpp
   RewriteObjC.cpp
+  RewriteObjCToD.cpp
   RewriteRope.cpp
   RewriteTest.cpp
   Rewriter.cpp

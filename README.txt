@@ -1,3 +1,19 @@
+This is a fork of clang for converting Objective-C/C header files
+to D modules.
+
+To build:
+
+1. Checkout LLVM into /path/llvm
+2. Clone this repository into /path/llvm/tools/clang
+3. Build LLVM
+
+Usage:
+
+$ clang -rewrite-objc-to-d NSObject.h -o NSObject.d
+
+Clang Subversion revision: 115305
+LLVM Subversion revision: 115305
+
 //===----------------------------------------------------------------------===//
 // C Language Family Front-end
 //===----------------------------------------------------------------------===//

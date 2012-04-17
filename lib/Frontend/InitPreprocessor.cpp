@@ -462,7 +462,7 @@ static void InitializePredefinedMacros(const TargetInfo &TI,
   else if (LangOpts.getStackProtectorMode() == LangOptions::SSPReq)
     Builder.defineMacro("__SSP_ALL__", "2");
 
-  if (FEOpts.ProgramAction == frontend::RewriteObjC)
+  if (FEOpts.ProgramAction == frontend::RewriteObjC || FEOpts.ProgramAction == frontend::RewriteObjCToD)
     Builder.defineMacro("__weak", "__attribute__((objc_gc(weak)))");
 
   // Define a macro that exists only when using the static analyzer.
